@@ -1,4 +1,4 @@
-name: Manual Different_Env
+name: WorkflowCall Different_Env
 
 on: 
   workflow_call:
@@ -35,5 +35,5 @@ jobs:
 
       - name: Print Details
         run: |
-          echo "I am running in Dev environment"
+          echo "I am running in $environment environment"
           echo "User Name: $ENV_USERNAME Pass: $ENV_PASS"
