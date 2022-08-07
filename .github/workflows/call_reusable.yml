@@ -13,5 +13,5 @@ jobs:
     uses: aps-Github-DevOps/reusable_wf/.github/workflows/diff_env_call.yml@main
     with: 
       environment: ${{ inputs.environment }}
-      ENV_USERNAME: ${{ secrets.ENV_USERNAME }}
-      ENV_PASS: ${{ secrets.ENV_PASS }}
+      ENV_USERNAME: "Arun"
+      ENV_PASS: "Pass"
