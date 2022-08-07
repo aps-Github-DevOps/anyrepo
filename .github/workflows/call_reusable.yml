@@ -13,5 +13,4 @@ jobs:
     uses: aps-Github-DevOps/reusable_wf/.github/workflows/diff_env_call.yml@main
     with: 
       environment: ${{ inputs.environment }}
-      ENV_USERNAME: "Arun"
-      ENV_PASS: "Pass"
+      secrets: inherit
