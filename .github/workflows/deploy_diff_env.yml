@@ -1,0 +1,44 @@
+name: Manual Different_Env
+
+on: 
+  workflow_dispatch:
+
+jobs:
+  
+  DEV:
+    runs-on: ubuntu-latest
+    environment: dev
+
+    steps:
+      - name: Checks-out
+        uses: actions/checkout@v3
+
+      - name: Print Details
+        run: |
+          echo "I am running in Dev environment"
+
+  QA:
+    runs-on: ubuntu-latest
+    environment: QA
+    needs: DEV
+
+    steps:
+      - name: Checks-out
+        uses: actions/checkout@v3
+
+      - name: Print Details
+        run: |
+          echo "I am running in Dev environment"
+
+  PERF:
+    runs-on: ubuntu-latest
+    environment: PERF
+    needs: QA
+
+    steps:
+      - name: Checks-out
+        uses: actions/checkout@v3
+
+      - name: Print Details
+        run: |
+          echo "I am running in Dev environment"                  
