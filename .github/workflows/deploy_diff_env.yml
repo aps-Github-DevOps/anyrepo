@@ -11,8 +11,6 @@ jobs:
     env:
       ENV_USERNAME: ${{ secrets.ENV_USERNAME }}
       ENV_PASS: ${{ secrets.ENV_PASS }}
-    
-    if: ENV_USERNAME == 'DEV_User'
 
     steps:
       - name: Checks-out
