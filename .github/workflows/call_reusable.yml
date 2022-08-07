@@ -10,11 +10,8 @@ on:
 
 jobs:
   call-workflow:
-    runs-on: ubuntu-latest
-    environment: "${{ github.event.inputs.environment }}"
-    steps:
-     - uses: aps-Github-DevOps/reusable_wf/.github/workflows/diff_env_call.yml@main
-       with: 
-        environment: ${{ inputs.environment }}
-        ENV_USERNAME: ${{ secrets.ENV_USERNAME }}
-        ENV_PASS: ${{ secrets.ENV_PASS }}
+    uses: aps-Github-DevOps/reusable_wf/.github/workflows/diff_env_call.yml@main
+    with: 
+      environment: ${{ inputs.environment }}
+      ENV_USERNAME: ${{ secrets.ENV_USERNAME }}
+      ENV_PASS: ${{ secrets.ENV_PASS }}
