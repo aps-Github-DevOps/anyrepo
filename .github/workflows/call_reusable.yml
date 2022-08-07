@@ -10,9 +10,11 @@ on:
 
 jobs:
   call-workflow:
-    uses: 
-      runs-on: ubuntu-latest
-      
-      steps:
-      - name: Send greeting
-        run: echo "${{ github.event.inputs.message }} ${{ fromJSON('["", "🥳"]')[github.event.inputs.use-emoji == 'true'] }} ${{ github.event.inputs.name }}"
+    runs-on: ubuntu-latest
+    environment: "${{ github.event.inputs.environment }}"
+    steps:
+     - uses: aps-Github-DevOps/reusable_wf/.github/workflows/diff_env_call.yml@main
+       with: 
+        environment: ${{ inputs.environment }}
+        ENV_USERNAME: ${{ secrets.ENV_USERNAME }}
+        ENV_PASS: ${{ secrets.ENV_PASS }}
